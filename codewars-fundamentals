@@ -1,0 +1,205 @@
+Codewars – fundamentals 1 -Challenge:
+
+Even or Odd
+function even_or_odd(number) {
+  return (number % 2  === 0 ? "Even" : "Odd");
+}
+
+
+Opposite number
+function opposite(number) {
+  return -number;
+}
+
+
+Codewars – fundamentals 2 -Challenge:
+
+String repeat
+const repeatStr = (n, str) => str.repeat(n);
+repeatStr(6 , 'yes');
+
+
+Jenny's secret message
+function greet(name){
+  if(name === "Johnny") {
+    return 'Hello, my love!';
+  } else {
+    return ('Hello, ' + name + '!') ;
+  }
+}
+
+
+Codewars – fundamentals 3 -Challenge:
+
+Convert boolean values to strings 'Yes' or 'No'
+function boolToWord( bool ){
+  if ( bool ) {
+  return 'Yes';
+  } else {
+  return 'No';
+  };
+}
+
+
+Remove First and Last Character
+function removeChar(str){
+ return str.slice(1, str.length -1);
+
+}
+
+
+Codewars – fundamentals 4 -Challenge:
+
+function getCount(str) {
+  var vowelsCount = 0;
+  
+  //turn the input into a string
+  var string = str.toString();
+  
+  //loop through the string
+  for (var i = 0; i <= string.length - 1; i++) {
+  
+    //if a vowel, add to vowel count
+    if (string.charAt(i) == "a" || string.charAt(i) == "e" || string.charAt(i) == "i" || string.charAt(i) == "o" || string.charAt(i) == "u") {
+      vowelsCount += 1;
+    }
+  }
+  return vowelsCount;
+}
+
+
+Get the Middle Character
+function getMiddle(s)
+{
+  s.toString();
+  var position;
+  var length;
+
+  if(s.length % 2 == 1) {
+      position = s.length / 2;
+      length = 1;
+  } else {
+      position = s.length / 2 - 1;
+      length = 2;
+  }
+
+  return s.substring(position, position + length)
+}
+
+
+Codewars – fundamentals 5 -Challenge:
+
+Jaden Casing Strings
+String.prototype.toJadenCase = function () {
+    return this.replace(/(^|\s)[a-z]/g, function(x){ return x.toUpperCase(); });
+};
+
+String.prototype.toJadenCase = function () {
+
+this.toLowerCase()
+  return this.split(' ').map(item => item[0].toUpperCase() + item.slice(1)).join(' ')
+};
+
+
+Mumbling
+function accum(str) {
+ let letters = str.toLowerCase().split('')
+	console.log(letters)
+  for(let i = 0; i < letters.length; i++) {
+    console.log(letters[i])
+    letters[i] = letters[i].toUpperCase() + letters[i].repeat(i)
+    console.log(letters[i])
+  }
+  return letters.join('-')
+
+}
+
+
+Codewars – fundamentals 6 -Challenge:
+
+Find the odd int - solution 1
+function findOdd(A) {
+// initialize counter
+   var count = 0;
+   // loop the array
+   for(var i=0; i<A.length; i++){
+   // nested loop to compare items
+   // if items are the same increment counter
+    for(var j=0; j<A.length; j++){
+      if(A[i] === A[j]) count++;
+     // if counter is odd number return the number
+    } if(count % 2 !== 0) return A[i]
+  } return 0;
+}
+
+
+Find the odd int - solution 2
+function findOdd(A) {
+  var count = 0;
+  for(let i=0; i<A.length; i++){
+    for(let j=0; j<A.length; j++){
+      if(A[i] === A[j]) count++;
+    } 
+    if(count % 2 !== 0) return A[i];
+  }
+  return 0;
+}
+
+
+
+Duplicate Encoder
+function duplicateEncode(word){
+
+  let str = "";
+  let lowerCase = word.toLowerCase();
+  for (var i = 0; i < lowerCase.length; i++) {
+    if (lowerCase.indexOf(lowerCase[i]) === lowerCase.lastIndexOf(lowerCase[i])) {
+      str += "(";
+    } else {
+      str += ")";
+    }
+  }
+  return str;
+}
+
+
+Codewars – fundamentals 7 -Challenge:
+
+Convert string to camel case
+function toCamelCase(str) {
+    
+str = str.split('');
+  return str.map(function(el, i){
+    if(el == '-' || el == '_'){
+      el = str[i+1].toUpperCase();
+      str.splice(i+1, 1);
+    }
+    return el;
+  }).join('');
+    
+ }
+
+
+Count the smiley faces!
+//return the total number of smiling faces in the array
+function countSmileys(arr) {
+    const eyes = [':',';'];
+  const nose = ['-','~'];
+  const mouth = [')','D'];  
+  let count = 0;
+
+  // For each smiley
+  arr.map( (smiley) => {
+    // If the length is 2, check if the eyes and mouth are valid
+    if (smiley.length===2 && eyes.indexOf(smiley.charAt(0))!==-1 && mouth.indexOf(smiley.charAt(1))!==-1) {
+        count++;
+    }
+    // If the length is 3, check if the eyes, nose and mouth are valid
+    else if (smiley.length===3 && eyes.indexOf(smiley.charAt(0))!==-1 && nose.indexOf(smiley.charAt(1))!==-1 && mouth.indexOf(smiley.charAt(2))!==-1) {
+        count++;
+    }
+  });
+
+  return count;
+}
+
